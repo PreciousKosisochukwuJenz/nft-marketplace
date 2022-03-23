@@ -25,6 +25,8 @@
   },
   "scripts": {
     "deploy": "npx hardhat run src/backend/scripts/deploy.js --network localhost",
+    "console": "npx hardhat console --network localhost",
+    "sm-test": "npx hardhat test",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
