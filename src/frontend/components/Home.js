@@ -69,7 +69,8 @@ const Home = ({ marketplace, nft }) => {
                       variant="primary"
                       size="lg"
                     >
-                      Buy for {ethers.utils.formatEther(item.totalPrice)} ETH
+                      Buy NFT for {ethers.utils.formatEther(item.totalPrice)}{' '}
+                      ETH
                     </Button>
                   </div>
                 </Card.Footer>
