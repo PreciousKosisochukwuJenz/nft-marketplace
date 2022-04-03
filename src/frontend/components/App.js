@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Spinner } from 'react-bootstrap'
 import Home from './Home'
 import Create from './Create'
+import MyListedItems from './MyListedItems'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -42,12 +43,10 @@ function App() {
       MarketplaceAbi.abi,
       signer,
     )
-
     setMarketplace(marketplace)
 
     const nft = new ethers.Contract(NftAddress.address, NftAbi.abi, signer)
     setNFT(nft)
-
     // toogle loading
     setLoading(false)
   }
@@ -78,7 +77,16 @@ function App() {
               path="/create"
               element={<Create marketplace={marketplace} nft={nft} />}
             ></Route>
-            <Route path="/my-listed-items"></Route>
+            <Route
+              path="/my-listed-items"
+              element={
+                <MyListedItems
+                  marketplace={marketplace}
+                  nft={nft}
+                  account={account}
+                />
+              }
+            ></Route>
             <Route path="/my-purchases"></Route>
           </Routes>
         )}

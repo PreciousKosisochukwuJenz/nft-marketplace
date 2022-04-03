@@ -17,7 +17,6 @@ const Create = ({ marketplace, nft }) => {
     if (typeof file !== 'undefined') {
       try {
         const result = await client.add(file)
-        console.log(result)
         setImage(`https://ipfs.infura.io/ipfs/${result.path}`)
       } catch (err) {
         console.log('Uplod to ipfs error: ', err)
@@ -51,7 +50,6 @@ const Create = ({ marketplace, nft }) => {
 
     // get token Id
     const id = await nft.tokenCount()
-
     // approve marketplace to spend nft
     await await nft.setApprovalForAll(marketplace.address, true)
 
