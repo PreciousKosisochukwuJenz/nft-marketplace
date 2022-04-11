@@ -1,1 +1,1 @@
-# nft-marketplace
+Tutorial based nft marketplace
